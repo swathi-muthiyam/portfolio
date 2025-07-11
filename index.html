@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swathi Muthiyam | Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Swathi Muthiyam</h1>
+      <p>• Technical Specialist • Consultant • Project Co-ordinator • Tech Lead • Tech Support Engineer</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Hello, I’m a Technical Specialist with 14+ years of experience in building and scaling enterprise applications, leading cross-functional development teams, and architecting robust systems using Microsoft technologies—especially .NET and cloud platforms.
+
+I’ve driven large-scale digital transformation initiatives across the automotive, retail, and enterprise software sectors. Whether mentoring developers, leading innovation roadmaps, or collaborating with global stakeholders, I focus on delivering solutions that are not just technically sound, but strategically aligned with business goals.
+
+Passionate about clean architecture, performance optimization, and continuous improvement, I thrive in fast-paced environments where technology and business intersect to create impact..</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <li>
+          <h3>Service Partner Platform</h3>
+          <p>Lead development of a digital services platform for Bosch service partners.  
+              Tech Stack: .NET Core 3.1, Azure IoT Hub, Logic Apps, SQL.</p>
+              <!-- Modal -->
+                  <div id="bspModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" onclick="closeModal('bspModal')">&times;</span>
+                      <h2>🚗🏍️Service Partner Platform</h2>
+                      <p><strong>Description:</strong> Service Partner App is an end-to-end digital platform designed for vehicle service workshops. It enhances operational efficiency by enabling service appointment bookings, job card management, and automated lead generation. The platform supports mobile and web interfaces, integrating tools like WhatsApp and Meta Ads to streamline customer communication and lead follow-up.</p>
+                      <br>
+                      <p><strong>Role:</strong> Technical Lead / Backend Developer</p>
+                      <br>
+                      <p><strong>Tech Stack:</strong> .NET Core 8.0, Azure Functions, Logic Apps, SQL Server, JavaScript (DevExtreme), Firebase Auth / JWT , WhatsApp Business API (Customer communication), Meta Ads API (Lead Capture), Firebase Cloud Messaging (Push Notifications), </p>
+                      <br>
+                      <p><strong>Platform:</strong> Mobile (Android/iOS) + Web Admin Panel</p>
+                      <br>
+                      <p><strong>Key Features:</strong> </p>
+                      <br>
+                      <p><strong>📱 Mobile App (Workshop Owner & Staff)</strong> </p> 
+                      <br>                     
+                        <ul>
+                          <li></b>Web Admin Panel:</b> Manage service partners, appointments, and job cards.</li>
+                          <li></b>Job Card Management:</b> Create, update, and track job cards for vehicle repairs.</li>
+                          <li></b>Lead Generation:</b> Automatically generate leads based on vehicle type and insurance expiry.</li>
+                          <li></b>WhatsApp Integration:</b> Send notifications and updates to customers via WhatsApp.</li>
+                          <li></b>Meta Ads Integration:</b> Capture leads from Meta Ads campaigns.</li>
+                          <li></b>Push Notifications:</b> Notify customers about appointment reminders and service updates.</li>
+                        </ul>
+                      <p><strong>🖥️ Admin Web Panel</strong> </p>
+                        <ul>                          
+                          <li></b>Master Data Management:</b> Add/update service types, vehicle models, brands, etc., to sync with the mobile app.</li>
+                          <li></b>KPI & Reports Dashboard:</b> View service metrics, lead conversion rates, and employee productivity. </li>
+                          <li></b>Lead Management:</b>
+                              # View and assign leads from Meta Ads.
+                              # Track lead status and performance by agent.</li>
+                          <li></b>Notification Center:</b>
+                              # Send custom notifications to customers.
+                              # Track delivery and response status of each message.</li>
+                          <li></b>User & Role Management:</b> Add new users and assign roles (Admin, Agent, Technician, etc.).</li>
+                          <li></b>Geo-location Update:</b> Update workshop location and reflect changes in the mobile app (useful for relocations).</li>
+                        </ul>
+                    </div>
+                  </div>
+          <!-- <a href="proj-bsp.html" target="_blank">View Project</a> -->
+          <a href="#" onclick="openModal('bspModal')">View Project</a>
+        </li>
+        <li>
+          <h3>TRAC 360</h3>
+          <p>IoT-based real-time tracking system. 
+            Tech Stack: .NET Core 3.1, Azure IoT Hub, Logic Apps, SQL.</p>
+                  <!-- Modal -->
+                  <div id="trac360Modal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" onclick="closeModal('trac360Modal')">&times;</span>
+                      <h2>IoT-based real-time tracking system</h2>
+                      <p><strong>Description:</strong> TRAC 360 is an IoT platform designed to register devices and process incoming telemetry data for operational monitoring and KPI generation.</p>
+                      <br>
+                      <p><strong>Role:</strong> Technical Lead / Backend & Cloud Integration Engineer</p>
+                      <br>
+                      <p><strong>Tech Stack:</strong> .NET Core 3.1, SQL Server, Microservices, Azure - Iot hub, Event hub, Functions, Logic App, Cosmos db, App services  </p>
+                      <br>                      
+                      <p><strong>Platform:</strong> Scheduler - Device registration + Simulator (Instead of actual device) + device Integration</p>
+                      <br>
+                      <p><strong>Key Features:</strong> </p>
+                      <br>
+                      <p><strong>Device Registration (Bulk Ingestion):</strong> </p>   
+                      <br>                   
+                        <ul>
+                          <li>A Function App automatically pulls bulk device data files from a designated SFTP location.</li>
+                          <li>Each file contains metadata required to register multiple devices (e.g., device ID, type, location, etc.).</li>
+                          <li>The Function App processes this data and registers the devices in the system.</li>
+                          <li>Device registration is logged in a SQL database for tracking and auditing purposes.</li><br>
+                          <p><strong>Telemetry Reception:</strong> </p><br>
+                          <li>Once registered, devices begin transmitting telemetry data (e.g., location, temperature, pressure).</li>
+                          <li>This data is received in real time by a client system responsible for ingesting and interpreting the incoming signals.</li>
+                        <p><strong>Data Persistence:</strong> </p><br>
+                        <li>Telemetry data is stored in Azure Cosmos DB, a scalable NoSQL database.</li>
+                        <li>This structured storage allows for high-speed querying and flexible schema management.</li>
+                        <br>
+                        <p><strong>KPI Population:</strong> </p><br>
+                        <li>Data from Cosmos DB is used to compute and populate Key Performance Indicators (KPIs).</li>
+                        <li>These KPIs support dashboards, alerts, and operational analytics, offering insights into device performance and status.</li>
+                        </ul>
+                    </div>
+                  </div>
+          <!-- <a href="proj-trac360.html" target="_blank">View Project</a> -->
+          <a href="#" onclick="openModal('trac360Modal')">View Project</a>
+        </li>
+        <li>
+          <h3>GTIL – Auditing Tool</h3>
+          <p>Business-critical accounting & tax platform.
+            Tech Stack: .NET Core, Azure Key Vault, Blob Storage, SQL</p>
+            <!-- Modal -->
+                  <div id="gtilModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" onclick="closeModal('gtilModal')">&times;</span>
+                      <h2>GTIL - Business-Critical Accounting & Tax Platform</h2>
+                      <p><strong>Description:</strong>A secure, enterprise-grade platform built to streamline and automate accounting, auditing, and tax processes. The system enables seamless engagement management, offline work synchronization, trial balance calculations, and supports end-to-end audit lifecycle workflows, ensuring compliance, accuracy, and efficiency.</p>
+                      <br>
+                      <p><strong>Tech Stack:</strong> .NET Core 3.1, Azure App services, Logic Apps, SQL, BLOB storage</p>
+                      <br>
+                      <p><strong>Platform:</strong> Web Application (hosted on local IIS)</p>
+                      <br>
+                      <p><strong>Key Features:</strong> </p><br>
+                      <ul>
+                        <p><strong>Engagement Lifecycle Management:</strong> </p><br>
+                        <li><p> Creation and tracking of audit/tax engagements.</p> </li>
+                        <li><p> Role-based access for audit teams, managers, and clients.</p> </li>
+                        <li><p> Real-time status updates and workflow automation.</p> </li>                        
+                        <br> <p><strong>Offline Work Synchronization:</strong> </p><br>
+                        <li><p> Auditors can work in offline mode (e.g., during field audits).</p> </li>
+                        <li><p> Changes are automatically synced to the central system once connectivity is restored.</p> </li>
+                        <li><p> Conflict resolution and audit trails ensure data integrity.</p> </li>
+                        <p><strong>Trial Balance Calculations:</strong> </p><br>
+                        <li><p> Auto-import of trial balance from client systems or manual entry.</p> </li>
+                        <li><p> Real-time computation of adjustments, reclassifications, and final balances.</p> </li>
+                        <li><p> Integration with working papers and financial statements.</p> </li> 
+                        <br> <p><strong>Audit Evidence Management:</strong> </p><br>
+                        <li><p> Upload and tag supporting documents (invoices, receipts, contracts)..</p> </li>
+                        <li><p> Link documents to specific audit assertions or checklist items..</p> </li>
+                        <li><p> Version control and secure file storage.</p> </li>
+
+                        <br> <p><strong>Risk Assessment & Planning:</strong> </p><br>
+                        <li><p> Built-in risk analysis tools to identify high-risk areas..</p> </li>
+                        <li><p> Supports materiality calculations and risk matrices..</p> </li>
+                        <li><p> Configurable audit planning templates and checklists.</p> </li>
+                        
+                        <br> <p><strong>Workpaper Management:</strong> </p><br>
+                        <li><p> Digital workpapers with review/approval workflows..</p> </li>
+                        <li><p> Cross-referencing, annotations, and reviewer comments..</p> </li>
+                        <li><p> Standard templates aligned with regulatory standards (e.g., GAAP, IFRS).</p> </li>
+
+                        <br> <p><strong>Lead Schedules & Sub-ledger Tie-Outs:</strong> </p><br>
+                        <li><p> Automated generation of lead schedules for account balances.</p> </li>
+                        <li><p> Integration with sub-ledger systems to ensure tie-outs.</p> </li>
+                        <li><p> Exception handling and reconciliation workflows..</p> </li>
+
+                        <br> <p><strong>Reporting & Dashboards:</strong> </p><br>
+                        <li><p> Real-time dashboards for engagement status, open items, and KPIs.</p> </li>
+                        <li><p> Exportable reports (PDF, Excel, CSV) for clients and regulators.</p> </li>
+                        <li><p> Audit log and compliance summaries.</p> </li>
+
+                        <br> <p><strong>Security & Compliance:</strong> </p><br>
+                        <li><p> Role-based access control and multi-factor authentication.</p> </li>
+                        <li><p> Data encryption at rest and in transit.</p> </li>
+                        <li><p> Compliance with industry standards such as SOX, ISO 27001, and SOC 2.</p> </li>
+
+                    </ul>
+                      
+                      
+                    </div>
+                  </div>
+          <!-- <a href="proj-gtil.html" target="_blank">View Project</a> -->
+          <a href="#" onclick="openModal('gtilModal')">View Project</a>
+
+        </li>
+        <li>
+          <h3>Connected Cars</h3>
+          <p>Cloud-based vehicle control system.
+Tech Stack: .NET Core, Azure, IoT, Angular, PowerShell</p>
+<!-- Modal -->
+                  <div id="fordModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" onclick="closeModal('fordModal')">&times;</span>
+                      <h2>Connected Cars  – IoT-Based Application</h2><br>
+                      <p><strong>Description:</strong> The Connected Cars platform is an advanced IoT-based solution designed to collect, process, and visualize vehicle telemetry data in real time. It includes a user-friendly mobile app for end users, a powerful web-based admin panel for fleet managers and support teams, and a microservices-driven backend architecture built for scalability, resilience, and speed.</p><br>
+                      <p><strong>Role:</strong> Full stack Developer, Release Manager, Support Engineer</p><br>
+                      <p><strong>Tech Stack:</strong> .NET Core 3.0, Azure Functions, Logic Apps, Azure SQL Server, Angular, AAD ,Azure Event hub, TCU device with pre-embedded SDN uri</p>
+                      <br><p><strong>Platform:</strong> Mobile (Android/iOS) + Web Admin Panel</p><br>
+                      <p><strong>Key Features:</strong> </p><br>
+                      <p><strong>📱 Mobile App (For Vehicle Owners/Drivers)</strong> </p>  <br>                    
+                        <ul>
+                          <li><b>Real-Time Vehicle Data:</b>  View location, fuel level, battery status, engine health, tire pressure, etc.</li>
+                          <li><b>Trip History: </b>  Access past routes, driving behavior, speed trends, and distance traveled.</li>
+                          <li><b>🖥️ Remote Features:</b><br>
+                            # Remote start/stop<br>
+                            # Lock/unlock doors<br>
+                            # Horn/light activation<br>
+                            <li><b>Maintenance Alerts:</b> Service reminders, diagnostics codes, and proactive issue detection.<br>
+                            <li><b>User Profile & Notifications:</b>  Manage preferences, push notifications for critical alerts, geo-fencing.<br>                              
+                        </ul>
+                       <ul>                          
+                          <li><b> Web Admin Panel (For Managers & Admins)</b><br>
+                            <li><b> Dashboard Overview:</b> Vehicle health summary, active/inactive vehicle stats, alerts.<br>
+                            <li><b>Live Tracking:</b> Map view of all connected vehicles with real-time status updates.<br>
+                            <li><b>Vehicle Management:</b> Register, update, or remove vehicles from the system.<br> 
+                            <li><b>Driver Behavior Analytics: </b> Monitor speed violations, harsh braking, acceleration, and idling time.<br>
+                            <li><b>Data Export & Reports: </b> Generate customized reports in various formats (CSV, PDF).                              
+                        </ul>
+                        <ul>  
+                          <li><b>Backend Microservices:</b><br>
+                              # Scalable architecture with independent services for data ingestion, processing, and storage.<br>
+                              # Azure Functions for serverless compute, Logic Apps for workflow automation.</li>
+                          <li><b>Telemetry Ingestion Service</b><br>
+                              # Collects real-time data from embedded vehicle TCU devices..<br>
+                              # Supports MQTT, HTTP protocols.</li>
+                          <li><b>Device Registration & Identity Service</b><br>
+                              # Manages secure provisioning of IoT devices(TCU) and vehicle authentication...
+                          <li><b> Notification Service</b><br>
+                              # Sends alerts via push, email, or SMS for key events (e.g., low battery, crash detection)..<br>
+                              <li><b>User Management & Access Control</b><br>
+                              # Handles authentication (OAuth2, SSO) and role-based access for both mobile and admin users.
+                              <li><b>Data Storage</b><br>
+                              # No SQL DB for telemetry.<br>
+                              # Relational DB Azure SQL for user and vehicle metadata.<br>
+                              # Blob Storage for diagnostic files, images, and logs.</li>                         
+                        </ul>
+                    </div>
+                  </div>
+          <!-- <a href="proj-ford.html" target="_blank">View Project</a> -->
+          <a href="#" onclick="openModal('fordModal')">View Project</a>
+        </li>
+
+        <li>
+          <h3>Global Newton — Inventory Management tool</h3>
+          <p>Application manages Parts and products management </p>
+          <!-- <a href="proj-ford.html" target="_blank">View Project</a> -->
+          <!-- Modal -->
+                  <div id="gnModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" onclick="closeModal('gnModal')">&times;</span>
+                      <h2>Global Newton — Inventory Management tool</h2><br>
+                      <p><strong>Description:</strong> An Inventory Management Tool for parts and products is a software application designed to streamline the tracking, storing, and organizing of inventory items (such as spare parts, components, and finished products). It ensures optimal stock levels, minimizes overstocking and stockouts, and enhances operational efficiency for businesses dealing with physical goods.</p>
+                     <br> <p><strong>Role:</strong> Technical Lead / Full stack Developer</p>
+                     <br> <p><strong>Tech Stack:</strong> .NET framework 4.8, Cluster server, SQL Server, JavaScript</p>
+                      <br><p><strong>Platform:</strong>  Web Application</p>
+                      <br><p><strong>Key Features:</strong> </p>
+                      <br><p><strong>📱 Parts Management</strong> </p>                      
+                        <ul>
+                          <li></b> Part Cataloguing :</b> Maintain a detailed catalog with part numbers, descriptions, suppliers, categories.</li>
+                          <li></b> Stock Tracking :</b> Real-time tracking of quantity on hand, minimum and maximum levels.</li>
+                          <li></b> Multi-location Support:</b>  Track parts across multiple warehouses or store locations..</li>
+                          <li></b> Reorder Alerts: </b> Automatic notifications when stock falls below a defined threshold.</li>
+                          <li></b> Serial/Batch Number Tracking:</b> Identify and trace individual parts.</li>
+                          
+                        </ul>
+                      <p><strong>🖥️  Products Management</strong> </p>
+                        <ul>
+                          <li><b>Product Catalog:</b> Create and manage product listings, SKUs, descriptions, pricing, categories.</li>
+                          <li><b>Bill of Materials (BOM):</b> Define how products are assembled from parts.</li>
+                          <li><b>Stock Management:</b> Monitor quantities available, reserved, or on order.</li>
+                        </ul>
+                    </div>
+                  </div>
+          <a href="#" onclick="openModal('gnModal')">View Project</a>
+        </li>
+<li>
+          <h3>SCALE — Manhattan Associates Product</h3>
+          <p>Product maintains supply chain process </p> 
+
+<!-- Modal -->
+                  <div id="scaleModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" onclick="closeModal('scaleModal')">&times;</span>
+                      <h2>SCALE — Manhattan Associates Product</h2>
+                      <br><p><strong>Description:</strong> SCALE (Supply Chain Architected for Logistics Execution) is a comprehensive, modular warehouse and logistics execution system developed by Manhattan Associates. It is designed to manage and optimize the entire supply chain process, from inbound logistics and warehouse operations to outbound shipping and returns management.
+It combines warehouse management (WMS), transportation management (TMS), labor management, and billing capabilities into a single, scalable platform        </p>
+                      <br><p><strong>Role:</strong> Full Stack Developer & Support Engineer</p>
+                      <br><p><strong>Tech Stack:</strong> C# 3.5, .Net Framework 3.5, Winforms 3.5,  WCF with Windows & Unix, Database (SQL Server 2008), Crystal reports.</p>
+                      <br><p><strong>Platform:</strong> Desktop Application</p>
+                      <br><p><strong>Key Features:</strong> </p><br>
+                      <br><p><strong> Key Project Features – Supply Chain Management System</strong> </p>                      
+                        <ul>
+                          <li></b>End-to-End Transaction Handling:</b> Customized critical outbound transactions including:</li><br>
+                          <li><b>Wave Management:</b> Grouping orders for efficient picking and shipping.</li><br>
+                          <li><b>Order Management:</b> Creating, modifying, and tracking customer orders.</li><br>
+                          <li><b>Inventory Management:</b> Real-time tracking of stock levels, locations, and movements.</li><br>
+                          <li><b>Labor Management:</b> Monitoring workforce productivity and performance.</li><br>
+                          <li><b>Billing Management:</b> Generating invoices and managing financial transactions.</li><br>
+                          <li><b>Pick and Pack:</b> Streamlining the picking process and packing items for shipment.</li><br>
+                          <li><b>Replishment:</b> Managing inventory replenishment based on demand and stock levels.</li><br>
+                          <li><b>Shipping:</b> Managing the entire shipping process, including carrier selection and label generation.</li><br>
+                          <li><b>Returns Management:</b> Handling returned items efficiently.</li><br>
+                          <li><b>Dock Management:</b> Optimizing dock door assignments and scheduling.</li><br>
+                          
+                        </ul>
+                      <p><strong>🖥️ System Customization & Enhancements</strong> </p>
+                        <ul> 
+                          <li>Customized workflows and screens based on unique client requirements in the warehouse and logistics domain.</b>
+                          </li>
+                          <li>Created reusable components for repeated SCM processes (e.g., packing list generation, shipment validation).</li>
+                         
+                        </ul>
+
+                      <p><strong>🖥️ Error Handling & Issue Resolution</strong> </p>
+                        <ul> 
+                          <li>Proactively identified and fixed issues in the UI and server-side applications to ensure smooth transaction processing.</b>
+                          </li>
+                          <li>Debugged complex server errors involving cross-layer integrations between UI, business logic, and the database.</li>
+                         
+                        </ul>
+
+                        <p><strong>🖥️ Integration with External Systems</strong> </p>
+                        <ul> 
+                          <li><b>Enabled integrations with:</b><br>
+                            # External ERP systems for Data Synchronization.<br>
+                            # Transportation Management Systems (TMS)<br>
+                            # Third-party logistics (3PL) providers.</li>
+                          </li>
+                          <li>Built APIs for real-time data exchange in shipping, order fulfillment, and inventory synchronization</li>
+                        </ul>
+                        
+                        <p><strong><b>Compliance & Audit Trail</b></strong> </p>
+                        <ul>  
+                          <li>
+                            # Implemented audit logs for tracking key transactions like picking, packing, and shipping.<br>
+                            # Ensured compliance with client-specific shipping documentation and label generation requirements.<br>
+                            
+                          </li>                          
+                        </ul>
+                        
+
+                    </div>
+                  </div>
+
+          <!-- <a href="proj-ford.html" target="_blank">View Project</a> -->
+          <a href="#" onclick="openModal('scaleModal')">View Project</a>
+        </li>
+        
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:cholkar.swathi@gmail.com">cholkar.swathi@gmail.com</a></p>
+      <p>LinkedIn: <a href="www.linkedin.com/in/swathi-muthiyam-2ab27415">www.linkedin.com/in/swathi-muthiyam-2ab27415</a></p>
+      <p>GitHub: <a href="https://swathi-muthiyam.github.io/swathicholkar.github.io/#">https://swathi-muthiyam.github.io/swathicholkar.github.io/</a> </p>
+    </div>
+  </section>
+
+  <script>
+function openModal(id) {
+  document.getElementById(id).style.display = 'block';
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+// Close modal if user clicks outside of modal-content
+window.onclick = function(event) {
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(modal => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+</script>
+
+</body>
+</html>
