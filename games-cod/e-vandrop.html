@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color Face Sorting Game</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #eef2f3;
+      overflow: hidden;
+    }
+
+    #scoreBoard {
+      padding: 10px;
+      font-size: 20px;
+      background: #444;
+      color: white;
+      text-align: center;
+    }
+
+    #gameArea {
+      position: relative;
+      width: 100vw;
+      height: 80vh;
+      background: white;
+      border-top: 2px solid #ccc;
+      overflow: hidden;
+    }
+
+    #buckets {
+      display: flex;
+      justify-content: space-around;
+      padding: 15px;
+      background: #ddd;
+    }
+
+    .bucket {
+      width: 100px;
+      height: 100px;
+      border: 2px dashed #aaa;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .bucket.red { background-color: #ffcccc; }
+    .bucket.green { background-color: #ccffcc; }
+    .bucket.blue { background-color: #ccccff; }
+
+    /* Face Styles */
+    .face {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      cursor: grab;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      border: 2px solid #333;
+    }
+
+    .eyes {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+
+    .eye {
+      width: 8px;
+      height: 8px;
+      background: black;
+      border-radius: 50%;
+    }
+
+    .nose {
+      width: 6px;
+      height: 6px;
+      background: black;
+      border-radius: 50%;
+      margin-bottom: 4px;
+    }
+
+    .plus {
+      position: absolute;
+      top: -12px;
+      font-weight: bold;
+      font-size: 16px;
+      color: darkred;
+    }
+  </style>
+</head>
+<body>
+
+<div id="scoreBoard">Score: 0</div>
+<div id="gameArea"></div>
+<div id="buckets">
+  <div class="bucket red" data-color="red">Red</div>
+  <div class="bucket green" data-color="green">Green</div>
+  <div class="bucket blue" data-color="blue">Blue</div>
+</div>
+
+<script>
+  const gameArea = document.getElementById('gameArea');
+  const scoreBoard = document.getElementById('scoreBoard');
+  let score = 0;
+
+  const colors = ['red', 'green', 'blue'];
+
+  function createFace() {
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    
+    const face = document.createElement('div');
+    face.classList.add('face');
+    face.setAttribute('data-color', color);
+    face.setAttribute('draggable', true);
+    face.style.backgroundColor = color;
+    face.style.left = `${Math.random() * (window.innerWidth - 70)}px`;
+
+    // Plus symbol on top
+    const plus = document.createElement('div');
+    plus.className = 'plus';
+    plus.textContent = '+';
+
+    // Eyes
+    const eyes = document.createElement('div');
+    eyes.className = 'eyes';
+    const eye1 = document.createElement('div');
+    eye1.className = 'eye';
+    const eye2 = document.createElement('div');
+    eye2.className = 'eye';
+    eyes.appendChild(eye1);
+    eyes.appendChild(eye2);
+
+    // Nose
+    const nose = document.createElement('div');
+    nose.className = 'nose';
+
+    // Build face
+    face.appendChild(plus);
+    face.appendChild(eyes);
+    face.appendChild(nose);
+
+    // Drag logic
+    face.addEventListener('dragstart', dragStart);
+
+    gameArea.appendChild(face);
+
+    // Falling animation
+    let topPos = 0;
+    const fall = setInterval(() => {
+      if (topPos < gameArea.offsetHeight - 60) {
+        topPos += 2;
+        face.style.top = `${topPos}px`;
+      } else {
+        clearInterval(fall);
+        if (face.parentElement) face.remove();
+      }
+    }, 16);
+  }
+
+  function dragStart(e) {
+    e.dataTransfer.setData('color', e.target.getAttribute('data-color'));
+  }
+
+  // Handle drop into buckets
+  document.querySelectorAll('.bucket').forEach(bucket => {
+    bucket.addEventListener('dragover', e => e.preventDefault());
+
+    bucket.addEventListener('drop', e => {
+      const color = e.dataTransfer.getData('color');
+      const bucketColor = bucket.getAttribute('data-color');
+      const faces = document.querySelectorAll(`.face[data-color="${color}"]`);
+
+      for (const face of faces) {
+        const rect = face.getBoundingClientRect();
+        const x = e.clientX;
+        const y = e.clientY;
+        if (
+          x >= rect.left && x <= rect.right &&
+          y >= rect.top && y <= rect.bottom
+        ) {
+          if (color === bucketColor) {
+            score++;
+            scoreBoard.textContent = `Score: ${score}`;
+          }
+          face.remove();
+          break;
+        }
+      }
+    });
+  });
+
+  // Start dropping faces every 2 seconds
+  setInterval(createFace, 2000);
+</script>
+
+</body>
+</html>
