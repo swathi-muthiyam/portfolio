@@ -15,7 +15,7 @@ body {
 }
 
 .sidebar {
-  background-color: #a73232;
+  background-color: black;
   color: white;
   width: 35%;
   padding: 30px 20px;
@@ -63,13 +63,13 @@ header h1 {
 }
 
 header h1 span {
-  color: #a73232;
+  color: #b2c9c9;
   font-weight: bold;
 }
 
 header h2 {
   font-size: 20px;
-  color: #a73232;
+  color: #b2c9c9;
   font-weight: normal;
   margin: 10px 0 30px;
 }
@@ -83,14 +83,14 @@ header h2 {
   margin-right: 30px;
   padding-left: 10px;
   padding-bottom: 5px;
-  color: #a73232;
+  color: seagreen;
 }
 
 .experienceheader h3 {
   margin-top: 0px;
   margin-right: 0px;
   padding-left: 0px;
-  color: #a73232;
+  color: seagreen;
 }
 
 .job {
@@ -125,7 +125,7 @@ body {
 }
 
 header {
-  background: #333;
+  background: black;
   color: #fff;
   padding: 2rem 0;
   text-align: center;
